@@ -17,4 +17,5 @@ def calculate_mdd(price_array):
     arr = np.array(price_array)
     idx_lower = np.argmin(arr - np.maximum.accumulate(arr))
     idx_upper = np.argmax(arr[:idx_lower])
-    return (arr[idx_lower] - arr[idx_upper]) / arr[idx_upper]
+    mdd = (arr[idx_lower] - arr[idx_upper]) / arr[idx_upper]
+    return mdd
